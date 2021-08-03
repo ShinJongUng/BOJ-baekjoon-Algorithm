@@ -1,5 +1,4 @@
 >Baejoon 2869
-============
 
 
 <h2> Algorithm -> {Day = ((V-B)/(A-B)))}
