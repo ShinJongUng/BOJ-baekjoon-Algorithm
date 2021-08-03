@@ -1,5 +1,6 @@
 >Baejoon 2869
 
+```BRONZE I / MATH / Class 2```
 
 <h2> Algorithm -> {Day = ((V-B)/(A-B)))}
 
