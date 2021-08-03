@@ -2,6 +2,8 @@
 
 ```BRONZE I / MATH / Class 2```
 
+(BOJ2859)[https://www.acmicpc.net/problem/2869]
+
 <h2> Algorithm -> {Day = ((V-B)/(A-B)))}
 
 
