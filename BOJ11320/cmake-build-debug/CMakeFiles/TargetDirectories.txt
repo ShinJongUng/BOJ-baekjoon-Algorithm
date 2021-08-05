@@ -1,3 +1,0 @@
-C:/Users/whddn/Desktop/BOJ/BOJ11320/cmake-build-debug/CMakeFiles/BOJ11320.dir
-C:/Users/whddn/Desktop/BOJ/BOJ11320/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/whddn/Desktop/BOJ/BOJ11320/cmake-build-debug/CMakeFiles/rebuild_cache.dir
