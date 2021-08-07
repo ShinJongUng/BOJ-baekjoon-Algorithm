@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace boj2338
+namespace boj6749
 {
     class Program
     {
