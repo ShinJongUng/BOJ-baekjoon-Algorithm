@@ -1,4 +1,4 @@
->Baejoon 8370
+>Baekjoon 8370
 
 ```Bronze V / Math / Class null```
 
