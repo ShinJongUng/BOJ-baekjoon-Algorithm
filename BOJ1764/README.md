@@ -1,4 +1,4 @@
->Baejoon 1764
+>Baekjoon 1764
 
 ```SILVER IV / set & list / Class 3```
 
