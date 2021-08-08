@@ -1,4 +1,4 @@
->Baejoon 1010
+>Baekjoon 1010
 
 ```Silver V / MATH(combination), Dinamic programming / Class Null```
 
