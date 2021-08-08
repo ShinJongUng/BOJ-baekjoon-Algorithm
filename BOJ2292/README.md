@@ -1,4 +1,4 @@
->Baejoon 2292
+>Baekjoon 2292
 
 ```BRONZE II / MATH / Class II```
 
