@@ -1,4 +1,4 @@
->Baejoon 10814
+>Baekjoon 10814
 
 ```SILVER V / SORT / Class 2```
 
