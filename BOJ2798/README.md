@@ -1,4 +1,4 @@
->Baejoon 2798
+>Baekjoon 2798
 
 ```BRONZE II / Brute Force / Class 2```
 
