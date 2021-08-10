@@ -1,4 +1,5 @@
 >Baekjoon 1010
+>>Language Python
 
 ```Silver V / MATH(combination), Dinamic programming / Class Null```
 
