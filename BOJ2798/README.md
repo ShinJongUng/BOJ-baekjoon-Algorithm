@@ -1,4 +1,5 @@
 >Baekjoon 2798
+>>Language Python
 
 ```BRONZE II / Brute Force / Class 2```
 
