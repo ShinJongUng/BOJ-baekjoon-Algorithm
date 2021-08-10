@@ -1,4 +1,5 @@
 >Baekjoon 1764
+>>Language Python
 
 ```SILVER IV / set & list / Class 3```
 
