@@ -1,5 +1,5 @@
 >Baekjoon 11320
->>Language C++
+>>Language C
 
 ```BRONZE III / Math / Class null```
 
