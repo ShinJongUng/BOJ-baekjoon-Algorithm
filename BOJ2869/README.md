@@ -1,4 +1,5 @@
 >Baekjoon 2869
+>>Language Python
 
 ```BRONZE I / MATH / Class 2```
 
