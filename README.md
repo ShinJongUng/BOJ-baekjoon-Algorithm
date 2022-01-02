@@ -1,6 +1,5 @@
 # BOJ 백준 알고리즘 저지
-
-
+<br>JS, C<br>
 
 BOJ: [whddnd0728](http://icpc.me/whddnd0728)<br>
   
