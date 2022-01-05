@@ -1,0 +1,2 @@
+let inputs = require('fs').readFileSync('ans.txt').toString().trim().split(' ');// /dev/stdin
+console.log(((parseInt(inputs[0]) + parseInt(inputs[1])) - Math.sqrt(inputs[0] ** 2 + inputs[1]**2)).toFixed(9))
