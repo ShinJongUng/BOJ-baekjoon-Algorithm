@@ -1,4 +1,4 @@
-let inputs = require('fs').readFileSync('ans.txt').toString().trim();// /dev/stdin
+let inputs = require('fs').readFileSync('/dev/stdin').toString().trim();// /dev/stdin
 for(let i = 1; i <= inputs; i++){
     for(let j = 1; j<= i; j++){
         process.stdout.write('*');
