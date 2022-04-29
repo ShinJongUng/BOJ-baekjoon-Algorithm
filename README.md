@@ -1,5 +1,5 @@
 # BOJ 백준 알고리즘 저지
-<br>node.js, C++, python<br>
+<br>node.js,python,C++<br>
 
 BOJ: [whddnd0728](http://icpc.me/whddnd0728)<br>
   
