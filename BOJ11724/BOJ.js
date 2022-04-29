@@ -9,7 +9,7 @@ for(let i = 0; i <inputs.length; i++){
     graph[b].push(a)
 }   
 
-for(let i = 1; i < n; i++){
+for(let i = 1; i <= n; i++){
     if(!visited[i]){
         DFS(i);
         cnt++;
