@@ -1,15 +1,11 @@
 const filePath = process.platform === 'linux' ? '/dev/stdin' : './ans.txt';
-let input = require('fs').readFileSync(filePath).toString().trim()
-input = Number(input)
-const dp = new Array(input + 1).fill(0)
+let [input, ...inputs] = require('fs').readFileSync(filePath).toString().split('\n').map((e)=>parseInt(e))
+const dp = new Array(input).fill(0)
 
-for(let i = 2; i < dp.length; i++){
-    dp[i] = dp[i-1] + 1
-    if(i % 3 == 0){
-        dp[i] = Math.min(dp[i], dp[Math.floor(i/3)] + 1)
-    }
-    if(i % 2 == 0){
-        dp[i] = Math.min(dp[i], dp[Math.floor(i/2)] + 1)
-    }
+dp[0] = inputs[0];
+dp[1] = inputs[0] + inputs[1];
+dp[2] = Math.max(inputs[0] + inputs[2], inputs[1] + inputs[2]);
+for(let i = 3; i < input; i++){
+    dp[i] = Math.max(inputs[i] + inputs[i - 1] + dp[i - 3] , dp[i - 2] +  inputs[i]);
 }
-console.log(dp[input])
+console.log(dp[input - 1]);
