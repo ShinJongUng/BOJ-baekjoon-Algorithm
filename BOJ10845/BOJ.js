@@ -1,7 +1,7 @@
 const filePath = process.platform === 'linux' ? '/dev/stdin' : 'ans.txt';
 let [N, ...inputs] = require('fs').readFileSync(filePath).toString().trim().split("\n");
 
-class Queue{
+class Stack{
     constructor(arr){
         this.arr = arr;
     }
@@ -9,7 +9,7 @@ class Queue{
         this.arr.push(num);
     }
     s_pop(){
-        let data = this.arr.shift();
+        let data = this.arr.pop();
         if(!data) return -1
         return data;
     }
@@ -21,44 +21,34 @@ class Queue{
             return 1;
         }
     }
+    s_top(){
+        if(!this.arr[this.arr.length - 1]) return -1;
+        return(this.arr[this.arr.length - 1])
+    }
     s_size(){
         return this.arr.length;
     }
-    s_front(){
-        let data = this.arr[0];
-        if(!data) return -1;
-        else return data;
-    }
-    s_back(){
-        let data = this.arr[this.arr.length - 1];
-        if(!data) return -1;
-        else return data;
-    }
 }
 
-
 const arr = [], ans = [];
-let queue = new Queue(arr);
+let stack = new Stack(arr);
 inputs.map((value)=>{
     value = value.trim().split(" ");
 
     if(value[0] == "push"){
-        queue.s_push(parseInt(value[1]));
+      stack.s_push(parseInt(value[1]));
     }
-    else if(value[0] == "empty"){
-        ans.push((queue.s_empty()));
+    else if(value[0] == "top"){
+        ans.push((stack.s_top()));
     }
     else if(value[0] == "size"){
-        ans.push(queue.s_size());
+        ans.push(stack.s_size());
     }
     else if(value[0] == "pop"){
-       ans.push(queue.s_pop());
+       ans.push(stack.s_pop());
     }
-    else if(value[0] == "front"){
-        ans.push(queue.s_front());
-    }
-    else if(value[0] == "back"){
-        ans.push(queue.s_back());
+    else if(value[0] == "empty"){
+        ans.push(stack.s_empty());
     }
 })
 
