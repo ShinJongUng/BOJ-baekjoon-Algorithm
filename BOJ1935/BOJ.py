@@ -1,20 +1,40 @@
 import sys
-from collections import deque
-deq = deque()
-list = list()
-N = int(input())
-line = sys.stdin.readline().rstrip()
+
+input = sys.stdin.readline().rstrip()
+
+list = []
+isAns = True
+val = 1
 ans = 0
 
-for i in range(N):
-    list.append(int(input()))
+for i, str in enumerate(input):
+    if str == "(":
+        list.append(str)
+        val *= 2
 
-for str in line:
-    if(str.isalpha()):
-        deq.append(list[ord(str) - 65])
-    else:
-        first = deq.pop()
-        second = deq.pop()
-        deq.append(eval(f"{second} {str} {first}"))
+    elif str == "[":
+        list.append(str)
+        val *= 3
 
-print("{:.2f}".format(deq[0]))
+    elif str == ")":
+        if not list or list[len(list) - 1] == "[":
+            isAns = False
+            break
+        if input[i-1] == "(":
+            ans += val
+        list.pop()
+        val //= 2
+
+    elif str == "]":
+        if not list or list[len(list) - 1] == "(":
+            isAns = False
+            break
+        if input[i-1] == "[":
+            ans += val
+        list.pop()
+        val //= 3
+
+if not isAns or list:
+    print(0)
+else:
+    print(ans)
