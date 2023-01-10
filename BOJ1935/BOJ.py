@@ -1,40 +1,17 @@
 import sys
+from collections import deque
+n = int(sys.stdin.readline().rstrip())
+list = list(map(int, sys.stdin.readline().rstrip().split()))
+stack = deque()
+ans = [0 for i in range(n)]
 
-input = sys.stdin.readline().rstrip()
-
-list = []
-isAns = True
-val = 1
-ans = 0
-
-for i, str in enumerate(input):
-    if str == "(":
-        list.append(str)
-        val *= 2
-
-    elif str == "[":
-        list.append(str)
-        val *= 3
-
-    elif str == ")":
-        if not list or list[len(list) - 1] == "[":
-            isAns = False
+for i in range(n):
+    while stack:
+        if stack[len(stack)-1][1] >= list[i]:
+            ans[i] = stack[len(stack)-1][0] + 1
             break
-        if input[i-1] == "(":
-            ans += val
-        list.pop()
-        val //= 2
+        else:
+            stack.pop()
+    stack.append([i, list[i]])
 
-    elif str == "]":
-        if not list or list[len(list) - 1] == "(":
-            isAns = False
-            break
-        if input[i-1] == "[":
-            ans += val
-        list.pop()
-        val //= 3
-
-if not isAns or list:
-    print(0)
-else:
-    print(ans)
+print(*ans)
