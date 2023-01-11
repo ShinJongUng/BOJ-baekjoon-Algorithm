@@ -14,4 +14,4 @@ for i in range(n):
             stack.pop()
     stack.append([i, list[i]])
 
-print(*ans)
+print(" ".join(map(str, ans)))
