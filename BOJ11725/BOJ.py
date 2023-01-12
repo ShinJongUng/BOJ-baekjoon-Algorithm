@@ -1,28 +1,58 @@
-import sys
 from collections import deque
-sys.setrecursionlimit(10**6)
-n = int(sys.stdin.readline().rstrip())
-data = ([deque() for i in range(n+1)])
-ans = [0 for i in range(n+1)]
+R, C, N = list(map(int, input().split()))
+graph = []
+for _ in range(R):
+    graph.append(list(map(str, input())))
 
-for _ in range(n-1):
-    node = list(map(int, sys.stdin.readline().rstrip().split()))
-    data[node[0]].append(node[1])
-    data[node[1]].append(node[0])
-
-def findAns(idx):
-    if(data[idx]):
-        node = data[idx].pop()
-        if (ans[idx] == node):
-            if(data[idx]):
-                data[idx].appendleft(node)
-                node = idx
+def bfs(x, y):
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
+    q = deque()
+    q.append([x, y])
+    graph[x][y] = 1
+    while q:
+        x, y = q.popleft()
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if nx < 0 or nx >= R or ny < 0 or ny >= C:
+                continue
             else:
-                node = ans[idx]
-        else:
-            ans[node] = idx
-        findAns(node)
+                if graph[nx][ny] == 'O':
+                    q.append([nx, ny])
+                graph[nx][ny] = 1
 
-findAns(1)
 
-print("\n".join(map(str, ans[2:])))
+def ans():
+    for i in range(R):
+        for j in range(C):
+            if graph[i][j] == 'O':
+                bfs(i, j)
+
+    for i in range(R):
+        for j in range(C):
+            if graph[i][j] == 1:
+                graph[i][j] = '.'
+            else:
+                graph[i][j] = 'O'
+
+if N % 2 == 0:
+    tmp = ['O'] * C
+    for _ in range(R):
+        print("".join(map(str, tmp)))
+elif N > 1 and N % 4 == 1:
+    ans()
+    ans()
+    for i in graph:
+        print("".join(map(str, i)))
+elif N % 4 == 3:
+    ans()
+    for i in graph:
+        print("".join(map(str, i)))
+else:
+    for i in graph:
+        print("".join(map(str, i)))
+
+
+
+
