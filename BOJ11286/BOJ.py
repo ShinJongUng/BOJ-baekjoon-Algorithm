@@ -1,15 +1,14 @@
-import heapq
 import sys
-
 input = sys.stdin.readline
-n = int(input())
-heap = []
-for _ in range(n):
-    x = int(input())
-    if x == 0:
-        if not heap:
-            print(0)
-        else:
-            print(heapq.heappop(heap)[1])
-    else:
-        heapq.heappush(heap, (abs(x), x))
+N, M = map(int, input().split())
+arr = dict()
+cnt = 0
+for _ in range(N):
+    s = input()
+    arr[s] = True
+for _ in range(M):
+    data = input()
+    if data in arr.keys():
+        cnt += 1
+
+print(cnt)
