@@ -1,5 +1,0 @@
-D, H, W = map(int, input().split())
-Num = D / ((H ** 2 + W ** 2) ** 0.5)
-height = int(H * Num)
-width = int(W * Num)
-print(height , width)
