@@ -3,7 +3,6 @@
 
 <br>
 
-<br>
 언어: Python, Javascript
 
 백준 프로필: [whddnd0728](http://icpc.me/whddnd0728)<br><br>
